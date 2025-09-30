@@ -1030,6 +1030,8 @@ html,body{ background:#05070f !important; }
 <style id="minimal-dashboard-refresh">
   :root {
     --dash-max-width: 1240px;
+    --dash-max-width: 1120px;
+
     --dash-shell-pad: clamp(1rem, 3vw, 2.5rem);
     --dash-shell-pad-mobile: 1.1rem;
     --dash-card-bg: rgba(12, 17, 27, 0.78);
@@ -1527,17 +1529,30 @@ html,body{ background:#05070f !important; }
     <div class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-screen" style="background-image: var(--page-bg);"></div>
     <div class="absolute inset-y-0 right-0 hidden w-2/3 bg-gradient-to-l from-black/70 to-transparent lg:block"></div>
   </div>
+
   <div class="relative mx-auto min-h-screen w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-12 xl:max-w-7xl xl:px-16">
     <div class="login-shell flex-1">
       <aside class="login-story space-y-10 text-slate-100 lg:max-w-2xl lg:space-y-12">
         <div class="rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-2xl sm:p-8">
+
+  <div class="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 py-12 sm:px-10 lg:px-16">
+    <div class="grid flex-1 items-center gap-12 py-6 lg:grid-cols-[1.08fr_minmax(0,1fr)] lg:py-12">
+      <aside class="order-2 space-y-10 text-slate-100 lg:order-1">
+        <div class="rounded-3xl border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur-2xl">
+
           <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
             <i data-feather="zap" class="h-4 w-4"></i>
             Experiencia premium
           </span>
+
           <h2 class="mt-6 text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-[2.6rem]">Tu acceso al Pascual, sin filas ni complicaciones.</h2>
           <p class="mt-4 text-base text-white/70 sm:text-lg">Recarga tu manilla, verifica tu QR y disfruta beneficios exclusivos diseñados para la hinchada escarlata.</p>
           <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+          <h2 class="mt-6 text-4xl font-semibold leading-tight text-white sm:text-[2.6rem]">Tu acceso al Pascual, sin filas ni complicaciones.</h2>
+          <p class="mt-4 text-base text-white/70">Recarga tu manilla, verifica tu QR y disfruta beneficios exclusivos diseñados para la hinchada escarlata.</p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+
             <div class="rounded-2xl border border-white/20 bg-black/30 px-4 py-5 text-white/80 shadow-lg backdrop-blur">
               <p class="text-xs uppercase tracking-[0.25em] text-white/50">Ingresos hoy</p>
               <p class="mt-2 text-3xl font-semibold text-white">12.542</p>
@@ -1606,8 +1621,13 @@ html,body{ background:#05070f !important; }
           </div>
         </div>
       </aside>
+
       <div class="login-panel w-full max-w-xl mx-auto lg:mx-0 lg:max-w-md lg:justify-self-end">
         <div role="main" class="rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-2xl backdrop-blur-xl sm:p-7 lg:p-8">
+
+      <div class="order-1 w-full max-w-xl lg:order-2 lg:justify-self-end">
+        <div role="main" class="rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
+
           <div class="space-y-8">
             <div class="space-y-4 text-center">
               <div class="relative mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-rose-500 via-red-500 to-red-600 shadow-2xl ring-4 ring-white/10">
@@ -2460,7 +2480,11 @@ html,body{ background:#05070f !important; }
 
       <main class="dashboard-shell">
          <section id="sectionNav" class="section-nav">
+
           <div class="flex gap-2 overflow-x-auto no-scrollbar drag-scroll">
+
+          <div class="flex gap-2 overflow-x-auto no-scrollbar">
+
             <button class="chip px-3 py-1.5 rounded-lg text-sm" data-section="#secResumen">Resumen</button>
             <button class="chip px-3 py-1.5 rounded-lg text-sm" data-section="#secPromos">Promos</button>
             <button class="chip px-3 py-1.5 rounded-lg text-sm" data-section="#secComunidad">Comunidad</button>
@@ -2612,7 +2636,11 @@ html,body{ background:#05070f !important; }
             <button id="openExperiencesBtn" class="text-sm bg-gray-800 hover:bg-gray-700 px-3 py-2 rounded-lg flex items-center gap-2"><i data-feather="star" class="w-4 h-4"></i>Experiencias</button>
           </div>
           <!-- Cupones rápidos para no dejar vacío el bloque cuando hay pocas promos -->
+
           <div id="promoQuickRow" class="flex gap-2 overflow-x-auto no-scrollbar drag-scroll mb-3"></div>
+
+          <div id="promoQuickRow" class="flex gap-2 overflow-x-auto no-scrollbar mb-3"></div>
+
           <div id="promosContainer" class="dash-grid dash-grid--two"></div>
         </section>
 
@@ -3516,26 +3544,41 @@ html,body{ background:#05070f !important; }
           const toast = document.getElementById('toast');
           if (!toast) return;
 
+
+
           const toneClasses = {
             success: ['bg-emerald-500/15', 'border-emerald-300/50', 'text-emerald-100'],
             error: ['bg-rose-500/15', 'border-rose-300/50', 'text-rose-100'],
             info: ['bg-sky-500/15', 'border-sky-300/50', 'text-sky-100']
           };
           const palette = Object.values(toneClasses).flat();
+
           const selection = toneClasses[type] || toneClasses.info;
 
           if (toastTimer) {
             window.clearTimeout(toastTimer);
           }
 
+
           toast.classList.remove(...palette);
           toast.textContent = message;
           toast.classList.remove('hidden');
+
           toast.classList.add(...selection);
 
           toastTimer = window.setTimeout(() => {
             toast.classList.add('hidden');
             toast.classList.remove(...selection);
+
+
+          const selection = toneClasses[type] || toneClasses.info;
+          toast.classList.add(...selection);
+
+          if (toastTimer) window.clearTimeout(toastTimer);
+          toastTimer = window.setTimeout(() => {
+            toast.classList.add('hidden');
+            toast.classList.remove(...palette);
+
           }, 3200);
         }
 
